@@ -10,6 +10,12 @@ import javax.persistence.Table;
 @Table (name= "collegedb_table")
 public class CollegeDTO implements java.io.Serializable {
 
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column(name= "CLGID")
 	private int collegeID;
@@ -28,6 +34,10 @@ public class CollegeDTO implements java.io.Serializable {
 	
 	@Column(name="NO_OF_BRANCHES")
 	private int noOfBranches;
+	
+	public CollegeDTO() {
+		System.out.println(this.getClass().getSimpleName() + "Default constructor");
+	}
 
 	public CollegeDTO(int collegeID, String cName, String cLocation, int noOfStudents, int noOfRooms,
 			int noOfBranches) {
@@ -87,6 +97,14 @@ public class CollegeDTO implements java.io.Serializable {
 	public void setNoOfBranches(int noOfBranches) {
 		this.noOfBranches = noOfBranches;
 	}
+
+	@Override
+	public String toString() {
+		return "CollegeDTO [collegeID=" + collegeID + ", cName=" + cName + ", cLocation=" + cLocation
+				+ ", noOfStudents=" + noOfStudents + ", noOfRooms=" + noOfRooms + ", noOfBranches=" + noOfBranches
+				+ "]";
+	}
+	
 	
 	
 }
